@@ -1,0 +1,55 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:import/typescript",
+        "plugin:react-hooks/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": [
+        "warn", {
+          "additionalHooks": "useRecoilCallback"
+        }
+      ],
+      "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      "no-param-reassign": [2, { "props": false }],
+      "import/prefer-default-export": "off",
+      "react/prop-types": "off",
+      "camelcase": "off",
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+     ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": { }
+      }
+    }
+}
